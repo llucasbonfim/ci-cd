@@ -1,12 +1,13 @@
 package sptech.school.exemplo_actions.service;
 
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.server.ResponseStatusException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculadoraServiceTest {
+class CalculadoraServiceTeste {
 
     @Test
     @DisplayName("Quando acionado com 10 e 2, então deve retornar 5")
