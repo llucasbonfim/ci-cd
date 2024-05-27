@@ -1,7 +1,9 @@
 package sptech.school.exemplo_actions.service;
 
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.springframework.web.server.ResponseStatusException;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculadoraServiceTest {
@@ -20,5 +22,23 @@ class CalculadoraServiceTest {
 
         // Assert
         assertEquals(esperado, resultado);
+    }
+
+    @Test
+    @DisplayName("Dividindo por zero e obtendo lançar uma exceção")
+    public void testDividirPorZero() {
+        CalculadoraService calculadoraService = new CalculadoraService();
+        double a = 10;
+        double b = 0;
+
+        var expectedMessage = "Não é permitida divisão por zero no denominador";
+
+        ResponseStatusException exception = assertThrows(
+                ResponseStatusException.class, () -> {
+                    calculadoraService.dividir(a, b);
+                }
+        );
+
+        assertEquals(expectedMessage, exception.getMessage());
     }
 }
