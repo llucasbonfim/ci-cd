@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.web.server.ResponseStatusException;
 import static org.junit.jupiter.api.Assertions.*;
 
-class CalculadoraServiceTest {
+class calculadoraservicetest {
 
     @Test
     @DisplayName("Quando acionado com 10 e 2, então deve retornar 5")
